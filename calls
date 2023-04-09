@@ -1,0 +1,8 @@
+CALLS BUENAS
+id=8
+sdf='sdsd'
+
+CALLS MALAS
+id=3";DROP DATABASE users;"
+";select * from users"
+"update"
