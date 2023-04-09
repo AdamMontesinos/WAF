@@ -3,7 +3,6 @@ function submitData(e) {
     let textInput = document.getElementsByTagName('input')[0].value;
     let url = 'test.php?' + textInput;
     // console.log('Redireccionando a ' + url)
-    let ajaxResponse;
     
     let ajaxCall = new XMLHttpRequest();
     ajaxCall.open("GET", url, true);
@@ -11,13 +10,9 @@ function submitData(e) {
 
     ajaxCall.onreadystatechange = function() {
         if (ajaxCall.readyState == 4) {
-            ajaxResponse = ajaxCall.responseText;
+            injectResponse(ajaxCall.responseText);
         }
     }
-
-    setTimeout(() => {
-        injectResponse(ajaxResponse); 
-    }, 500);
 }
 
 function injectResponse(text) {
